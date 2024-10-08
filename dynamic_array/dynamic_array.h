@@ -5,24 +5,24 @@
 #ifndef DYNAMIC_ARRAY_H
 #define DYNAMIC_ARRAY_H
 
-class DynamicArray {
+class dynamic_array {
 private:
     int* data; // Pointer to array
     int len; // Length users think array is
     int capacity; // Actual array size
 public:
-    DynamicArray();
-    DynamicArray(int);
-    ~DynamicArray();
+    explicit dynamic_array();
+    explicit dynamic_array(int);
+    ~dynamic_array();
     int size() const;
-    bool isEmpty() const;
+    bool is_empty() const;
     int get(int) const;
     void set(int, int) const;
     void add(int);
-    void removeAt(int);
+    void remove_at(int);
     void remove(int);
-    int indexOf(int) const;
-    bool contains(int) const;
+    int index_of(int) const;
+    bool is_contain(int) const;
 };
 
 #endif //DYNAMIC_ARRAY_H

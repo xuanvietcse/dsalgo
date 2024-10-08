@@ -12,7 +12,7 @@
 /**
  * Constructor to initialize the dynamic array with default values
  */
-DynamicArray::DynamicArray() {
+dynamic_array::dynamic_array() {
     this->data = new int[DEFAULT_SIZE];
     this->len = 0;
     this->capacity = DEFAULT_SIZE;
@@ -22,7 +22,7 @@ DynamicArray::DynamicArray() {
  * Constructor to initialize the dynamic array with specific value
  * @param capacity Capacity users want to set
  */
-DynamicArray::DynamicArray(const int capacity) {
+dynamic_array::dynamic_array(const int capacity) {
     // Check parameters
     if (capacity <= 0) {
         std::cout << "Illegal capacity." << std::endl;
@@ -36,7 +36,7 @@ DynamicArray::DynamicArray(const int capacity) {
 /**
  * Destructor of dynamic array
  */
-DynamicArray::~DynamicArray() {
+dynamic_array::~dynamic_array() {
     delete[] this->data;
 }
 
@@ -44,7 +44,7 @@ DynamicArray::~DynamicArray() {
  * Return the number of elements in this dynamic array
  * @return Number of elements in this dynamic array
  */
-int DynamicArray::size() const {
+int dynamic_array::size() const {
     return this->len;
 }
 
@@ -52,7 +52,7 @@ int DynamicArray::size() const {
  * Check if this dynamic array is empty or not
  * @return Array is empty or not
  */
-bool DynamicArray::isEmpty() const {
+bool dynamic_array::is_empty() const {
     return this->len == 0;
 }
 
@@ -61,7 +61,7 @@ bool DynamicArray::isEmpty() const {
  * @param index Index of element to be accessed
  * @return Value of indexed element
  */
-int DynamicArray::get(const int index) const {
+int dynamic_array::get(const int index) const {
     // Check parameters
     if (index < 0 || index >= this->len) {
         std::cout << "Illegal index: Out of bound." << std::endl;
@@ -75,7 +75,7 @@ int DynamicArray::get(const int index) const {
  * @param index Index to set value
  * @param value Value to set
  */
-void DynamicArray::set(const int index, const int value) const {
+void dynamic_array::set(const int index, const int value) const {
     // Check parameters
     if (index < 0 || index >= this->len) {
         std::cout << "Illegal index: Out of bound." << std::endl;
@@ -87,7 +87,7 @@ void DynamicArray::set(const int index, const int value) const {
  * Add new value to dynamic array
  * @param value Value to add to the dynamic array
  */
-void DynamicArray::add(const int value) {
+void dynamic_array::add(const int value) {
     if (this->len == this->capacity) {
         int newCapacity = this->capacity * 2; // Update capacity
         int* newData = new int[newCapacity]; // Allocate new array
@@ -106,7 +106,7 @@ void DynamicArray::add(const int value) {
  * Remove element at specific index
  * @param index Index to be removed
  */
-void DynamicArray::removeAt(const int index) {
+void dynamic_array::remove_at(const int index) {
     // Check parameters
     if (index < 0 | index >= this->len) {
         std::cout << "Illegal index: Out of bound." << std::endl;
@@ -124,7 +124,7 @@ void DynamicArray::removeAt(const int index) {
  * @param value Value to check
  * @return Whether the value is existed or not
  */
-bool DynamicArray::contains(const int value) const {
+bool dynamic_array::is_contain(const int value) const {
     for (int i = 0; i < this->len; i++) {
         if (this->data[i] == value) {
             return true;
@@ -138,9 +138,9 @@ bool DynamicArray::contains(const int value) const {
  * @param value Value to check
  * @return The first index of that value
  */
-int DynamicArray::indexOf(const int value) const {
+int dynamic_array::index_of(const int value) const {
     // Check if value is in array or not
-    if (!contains(value)) {
+    if (!is_contain(value)) {
         return -1;
     }
     for (int i = 0; i < this->len; i++) {
@@ -151,11 +151,11 @@ int DynamicArray::indexOf(const int value) const {
     return -1;
 }
 
-void DynamicArray::remove(const int value) {
+void dynamic_array::remove(const int value) {
     // Check if value is in array or not
-    if (!contains(value)) {
+    if (!is_contain(value)) {
         std::cout << "Value not found." << std::endl;
         return;
     }
-    removeAt(indexOf(value));
+    remove_at(index_of(value));
 }

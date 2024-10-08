@@ -1,7 +1,7 @@
 #include <iostream>
 #include "dynamic_array.h"
 int main() {
-    DynamicArray d_array;
+    dynamic_array d_array;
     // Add
     d_array.add(5);
     d_array.add(10);
