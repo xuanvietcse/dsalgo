@@ -80,7 +80,7 @@ void single_linked_list::add_at(const int index, const int data) {
   }
 }
 
-int single_linked_list::peek_first() {
+int single_linked_list::peek_first() const {
   // Check whether the list is empty or not
   if (is_empty()) {
     std::cout << "empty list" << std::endl;
@@ -89,7 +89,7 @@ int single_linked_list::peek_first() {
   return this->head->get_data();
 }
 
-int single_linked_list::peek_last() {
+int single_linked_list::peek_last() const {
   // Check whether the list is empty or not
   if (is_empty()) {
     std::cout << "empty list" << std::endl;
@@ -98,7 +98,7 @@ int single_linked_list::peek_last() {
   return this->tail->get_data();
 }
 
-int single_linked_list::index_of(int value) {
+int single_linked_list::index_of(const int value) const {
   node *trav = this->head;
   int count = 0;
   while (trav != this->tail) {
@@ -112,11 +112,11 @@ int single_linked_list::index_of(int value) {
   return -1;
 }
 
-bool single_linked_list::is_contain(int value) {
+bool single_linked_list::is_contain(const int value) const {
   return (index_of(value) != -1);
 }
 
-void single_linked_list::remove_value(int value) {
+void single_linked_list::remove_value(const int value) {
   if (is_contain(value)) {
     remove_at(this->index_of(value));
   } else {
@@ -124,7 +124,7 @@ void single_linked_list::remove_value(int value) {
   }
 }
 
-void single_linked_list::remove_at(int index) {
+void single_linked_list::remove_at(const int index) {
   // Check if the list is empty or not
   if (is_empty()) {
     std::cout << "empty list" << std::endl;
@@ -180,7 +180,7 @@ void single_linked_list::remove_last() {
   this->len--;
 }
 
-void single_linked_list::display() {
+void single_linked_list::display() const {
   node *trav = this->head;
   while (trav != nullptr) {
     std::cout << trav->get_data() << " -> ";

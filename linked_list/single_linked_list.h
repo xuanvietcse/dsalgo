@@ -21,15 +21,15 @@ public:
   void add_first(int);
   void add_last(int);
   void add_at(int, int);
-  int peek_first();
-  int peek_last();
+  int peek_first() const;
+  int peek_last() const;
   void remove_first();
   void remove_last();
   void remove_at(int);
   void remove_value(int);
-  int index_of(int);
-  bool is_contain(int);
-  void display();
+  int index_of(int) const;
+  bool is_contain(int) const;
+  void display() const;
 };
 
 #endif //SINGLE_LINKED_LIST_H
