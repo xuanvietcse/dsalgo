@@ -9,4 +9,6 @@ add_executable(stack main.cpp
         single_linked_list.cpp
         single_linked_list.h
         linked_list_stack.cpp
-        linked_list_stack.h)
+        linked_list_stack.h
+        array_stack.cpp
+        array_stack.h)

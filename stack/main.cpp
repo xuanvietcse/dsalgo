@@ -1,7 +1,10 @@
 #include <iostream>
+
+#include "array_stack.h"
 #include "linked_list_stack.h"
 int main() {
-  linked_list_stack stack;
+  // linked_list_stack stack;
+  array_stack stack;
   // Add
   stack.push(5);
   stack.push(10);
