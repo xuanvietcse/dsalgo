@@ -13,7 +13,7 @@ array_stack::array_stack() {
   this->data = new int[this->capacity];
 }
 
-array_stack::array_stack(int capacity) {
+array_stack::array_stack(const int capacity) {
   this->capacity = capacity;
   this->head = -1;
   this->data = new int[this->capacity];
@@ -36,7 +36,7 @@ bool array_stack::is_empty() const {
   return (this->head == -1);
 }
 
-void array_stack::push(int value) {
+void array_stack::push(const int value) {
   if (size() == this->capacity) {
     std::cout << "Stack overflow" << std::endl;
     return;
