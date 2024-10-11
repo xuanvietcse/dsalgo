@@ -1,8 +1,11 @@
 #include "linked_list_queue.h"
 #include <iostream>
 
+#include "array_queue.h"
+
 int main() {
-  linked_list_queue queue;
+  // linked_list_queue queue;
+  array_queue queue;
   // Enqueue
   queue.enqueue(1);
   queue.enqueue(2);

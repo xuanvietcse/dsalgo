@@ -9,4 +9,6 @@ add_executable(queue main.cpp
         node.cpp
         node.h
         single_linked_list.cpp
-        single_linked_list.h)
+        single_linked_list.h
+        array_queue.cpp
+        array_queue.h)
